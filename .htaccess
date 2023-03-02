@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+
+    # Make sure it's not an actula file/dir being accessed
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Make sure request uri does not contain the actual file 
+    # name, avoiding recursive rewrite loops
+    RewriteCond %{REQUEST_URI} !go\.php
+    RewriteRule go/?(.*)? go/index.php?q=$1 [R,L,QSA]
+</IfModule>
