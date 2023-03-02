@@ -19,7 +19,7 @@ to get ready
       
 Adding url
 
-    $name = "google";// https://serohan.com/go/google
+    $name = "google";  // https://serohan.com/go/google
     $URL = "https://google.com"; //this make going to ../go/google redirects you to google.com
 
 	//automaticly checks if name exist in json file if name doesn't exist return true else return false
