@@ -10,6 +10,6 @@ Options +FollowSymLinks
 
     # Make sure request uri does not contain the actual file 
     # name, avoiding recursive rewrite loops
-    RewriteCond %{REQUEST_URI} !go\.php
-    RewriteRule go/?(.*)? go/index.php?q=$1 [R,L,QSA]
+    RewriteCond %{REQUEST_URI} !/.php
+    RewriteRule /?(.*)? index.php?q=$1 [R,L,QSA]
 </IfModule>
