@@ -24,8 +24,9 @@ class URLShortener
         if(!$this->checkName($name)){
             $this->urls[$name] = array($name => $URL);
             file_put_contents('urls.json',json_encode($this->urls,JSON_PRETTY_PRINT));
+            return true;
         }else{
-            return "shortname exist";
+            return false;
         }
     }
 
@@ -33,8 +34,9 @@ class URLShortener
         if($this->checkName($name)){
             unset($this->urls[$name]);
             file_put_contents('urls.json',json_encode($this->urls,JSON_PRETTY_PRINT));
+            return true;
         }else{
-            return "name not exist";
+            return false;
         }
     }
 }
